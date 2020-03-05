@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class HomeViewModel extends AndroidViewModel {
-    
+
     public enum Gender {
         M, F, O
     }
