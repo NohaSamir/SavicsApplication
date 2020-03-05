@@ -5,9 +5,11 @@
 
     <data>
 
+        <import type="com.example.savicsapplication.ui.home.HomeViewModel.Gender" />
+
         <variable
-            name="patient"
-            type="com.example.savicsapplication.data.source.Patient" />
+            name="viewModel"
+            type="com.example.savicsapplication.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Full Name"
-                android:text="@={patient.fullName}" />
+                android:text="@={viewModel.patient.fullName}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -73,18 +75,21 @@
                 android:id="@+id/radioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.onGenderChange(Gender.M)}"
                 android:text="@string/male" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.onGenderChange(Gender.F)}"
                 android:text="@string/female" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.onGenderChange(Gender.O)}"
                 android:text="@string/other" />
         </RadioGroup>
 
@@ -104,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/age"
                 android:inputType="numberDecimal"
-                android:text="@{String.valueOf(patient.age)}" />
+                android:text="@={``+ viewModel.patient.age}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -122,15 +127,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email "
-                android:text="@={patient.email}" />
+                android:text="@={viewModel.patient.email}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
@@ -142,6 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
+            android:onClick="@{() -> viewModel.addPatient()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_add_24dp"

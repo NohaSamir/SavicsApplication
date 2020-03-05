@@ -2,14 +2,14 @@
     <string name="app_name">Savics Application</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Savics</string>
+    <string name="nav_header_subtitle">support@savics.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_reset">Reset</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_share">Share</string>
 
     <string name="home_second">Home Second</string>
     <string name="add_new_patient">Add New Patient</string>
@@ -18,4 +18,15 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="other">Other</string>
+    <string name="current_username">Current username</string>
+    <string name="current_number_of_added_patient">Current number of added patient</string>
+    <string name="max_number_of_patient_allowed">Max number of patient allowed</string>
+    <string name="save">Save</string>
+    <string name="settings_toast">Max: %1d , Username: %2s</string>
+    <string name="max_patients_reached">Max of patients per session reached.</string>
+    <string name="hi_again">Hi Again, %s</string>
+    <string name="data_cleared">Data cleared</string>
+    <string name="communicate">Communicate</string>
+    <string name="savics_test">Savics Android Test</string>
+    <string name="i_like">I did good, I like it.</string>
 </resources>

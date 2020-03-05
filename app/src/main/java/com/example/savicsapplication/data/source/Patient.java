@@ -1,5 +1,7 @@
 package com.example.savicsapplication.data.source;
 
+import androidx.annotation.NonNull;
+
 public class Patient {
     private String fullName;
     private int age;
@@ -11,6 +13,9 @@ public class Patient {
         this.age = age;
         this.email = email;
         this.gender = gender;
+    }
+
+    public Patient() {
     }
 
     public String getFullName() {
@@ -43,5 +48,11 @@ public class Patient {
 
     public void setGender(char gender) {
         this.gender = gender;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return " Patient( FullName = " + fullName + " , Age = " + age + " , Gender = " + gender + ")";
     }
 }
